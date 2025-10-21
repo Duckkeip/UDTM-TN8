@@ -13,7 +13,7 @@ D:\git\UDTM-TN8\server>npm rs //nếu sửa code thì server tự động reset
 ### ở web chạy
 ```js
 D:\git\UDTM-TN8\web>cd quanao
-D:\git\UDTM-TN8\web\quanao>npm run 
+D:\git\UDTM-TN8\web\quanao>npm start
 
 ```
 
