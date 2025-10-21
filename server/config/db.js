@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 
 const connectDB = async () => {
   try {
-    await mongoose.connect("mongodb://127.0.0.1:27017/quizz");
+    await mongoose.connect("mongodb://127.0.0.1:27017/quanao");
     console.log('✅ kết nối MongoDB thành công');
   } catch (err) {
     console.error('❌ Lỗi kết nối MongoDB:', err.message);

@@ -7,7 +7,7 @@ const User = require("../models/User");
 // ===== ĐĂNG KÝ =====
 router.post("/register", async (req, res) => {
   try {
-    const { username, email, password, sdt, address } = req.body;
+    const { username, email, password, SDT, address } = req.body;
 
     // Kiểm tra trùng email
     const existingEmail = await User.findOne({ email });
@@ -27,7 +27,7 @@ router.post("/register", async (req, res) => {
       username,
       email,
       password: passwordHash, // chỉ lưu password hash
-      phone,
+      SDT,
       address,
     });
 
