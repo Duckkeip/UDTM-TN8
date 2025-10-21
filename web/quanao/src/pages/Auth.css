@@ -4,7 +4,7 @@
     flex-direction: row;
     height: 100vh;
     font-family: "Segoe UI", sans-serif;
-    background: linear-gradient(180deg, #276dfa, #0cececb9);
+    background: linear-gradient(135deg,#524469b9,#1e2b2bb9);
     
   }
   
@@ -46,9 +46,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(-135deg,#6200ffb9,#0cececb9);
-    border-bottom-left-radius: 10vh;
-    border-top-left-radius: 10vh;
+    background: linear-gradient(-135deg,#d9cfe9b9,#1e2b2bb9);
+    
     animation: fadeIn 1.0s ease-in-out;
     text-shadow:  1px 5px 4px rgba(0, 0, 0, 0.3);  
     
@@ -88,7 +87,7 @@
   }
   
   .auth-card button {
-    background: linear-gradient(to right, #6200ffb9, #0cececb9);
+    background: linear-gradient(135deg,#524469b9,#1e2b2bb9);
     color: white;
     padding: 12px;
     border: none;
@@ -97,7 +96,6 @@
     transition: 0.3s;
     font: italic bold 1rem "Segoe UI", sans-serif;
   }
-  
   .auth-card button:hover {
     transform: scale(1.05);
     opacity: 0.9;
@@ -105,7 +103,7 @@
   }
   
   .switch a {
-    color: #1bb1f7;
+    color: #172329;
     text-decoration: none;
     font-weight: 600;
   }
