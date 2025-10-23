@@ -36,3 +36,32 @@
     transform: rotate(360deg);
   }
 }
+
+.container {
+  width:1200px;
+  margin:auto
+}
+.container > nav {
+  height:45px ;
+  background-color: darkcyan;
+  display: flex;
+  align-items: center;
+
+}
+.container > nav a {
+  color: white;
+  text-decoration: none;
+  margin-right:10px;
+}
+.container > main {
+  min-height: 400px;
+  background-color:lightgoldenrodyellow ;
+  
+
+}
+.container nav .active {
+  color: orange;   
+  font-weight: bold;
+  font-size:1.1rem;
+  text-decoration: underline;
+}

@@ -1,0 +1,36 @@
+{/* <BrowserRouter basename="/">
+      <div className="container">
+        <nav>
+          <NavLink to="/" className="home">Trang chủ</NavLink>
+          <NavLink to="/loai/thieunhi">Thiếu nhi</NavLink>
+          <NavLink to="/loai/nghethuatsong">Nghệ thuật sống</NavLink>
+          <NavLink to="/search" className="mx-2">Tìm hình</NavLink> 
+          <NavLink to="/download" className="download">Download </NavLink>
+        </nav>
+
+        <main>
+          <Routes>
+            <Route path="/" element={<TrangChu />} />
+            <Route path="/sach/:id" element={<Sach />} />
+            <Route path="/loai/:id/:pagenum" element={<SachTrongLoai />} />
+            <Route
+              path="/download"
+              element={dangNhapChua ? <Download /> : <Navigate to="/" />}
+            />
+            <Route path="/search" element={<TimAnh />} />
+          </Routes>
+
+        </main>
+        
+        
+          <Router>
+            <Routes>
+              <Route path="/" element={<Homepage />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
+
+            </Routes>
+          </Router>
+        
+        </div>
+        </BrowserRouter>*/}
