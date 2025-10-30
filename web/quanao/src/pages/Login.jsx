@@ -20,6 +20,8 @@ function Login() {
     try {
       const res = await axios.post("http://localhost:4000/api/auth/login", form);
       localStorage.setItem("token", res.data.token);// Lưu token vào localStorage
+      localStorage.setItem("user", JSON.stringify(res.data.user));// Lưu thông tin user vào localStorage
+      console.log("User lưu vào localStorage:", res.data.user);
       const user = res.data.user;
       console.log("Đăng nhập thành công:", user);
        setTimeout(() => {

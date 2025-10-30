@@ -1,0 +1,18 @@
+.btn {
+    background-color: #001aff; /* Màu nền xanh lá cây */
+    border: none; /* Bỏ viền */
+    color: rgb(117, 10, 10); /* Màu chữ trắng */
+    padding: 15px 32px; /* Khoảng cách bên trong nút */
+    text-align: center; /* Căn giữa chữ */
+    text-decoration: none; /* Bỏ gạch chân */
+    display: inline-block; /* Hiển thị dưới dạng khối nội tuyến */
+    font-size: 16px; /* Kích thước chữ */
+    margin: 4px 2px; /* Khoảng cách bên ngoài nút */
+    cursor: pointer; /* Con trỏ chuột khi hover lên nút */
+    border-radius: 8px; /* Bo góc nút */
+
+
+}
+.btn-hover {
+    background-color: #080a2b; /* Màu nền khi hover */
+}

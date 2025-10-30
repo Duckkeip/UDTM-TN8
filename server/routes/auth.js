@@ -3,19 +3,23 @@ const router = express.Router();
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const User = require("../models/User");
+const connectDB = require("../config/db");
 
 // ===== ĐĂNG KÝ =====
 router.post("/register", async (req, res) => {
   try {
+    const db = await connectDB();
+    const users = db.collection("users");
+
     const { username, email, password, SDT, address } = req.body;
 
     // Kiểm tra trùng email
-    const existingEmail = await User.findOne({ email });
+    const existingEmail = await users.findOne({ email });
     if (existingEmail)
       return res.status(400).json({ message: "Email đã được sử dụng" });
 
     // Kiểm tra trùng username
-    const existingUsername = await User.findOne({ username });
+    const existingUsername = await users.findOne({ username });
     if (existingUsername)
       return res.status(400).json({ message: "Username đã tồn tại" });
 
@@ -23,7 +27,7 @@ router.post("/register", async (req, res) => {
     const passwordHash = await bcrypt.hash(password, 10);
 
     // Tạo user mới
-    const user = new User({
+    const newUser = new User({
       username,
       email,
       password: passwordHash, // chỉ lưu password hash
@@ -31,7 +35,7 @@ router.post("/register", async (req, res) => {
       address,
     });
 
-    await user.save();
+    await users.save();
 
     res.json({ message: "Đăng ký thành công!" });
   } catch (err) {
@@ -43,10 +47,14 @@ router.post("/register", async (req, res) => {
 // ===== ĐĂNG NHẬP =====
 router.post("/login", async (req, res) => {
   try {
+
+    const db = await connectDB();
+    const users = db.collection("users");
+
     const { identifier, password } = req.body;
 
     // Cho phép đăng nhập bằng username hoặc email
-    const user = await User.findOne({
+    const user = await users.findOne({
       $or: [{ email: identifier }, { username: identifier }],
     });
     if (!user)

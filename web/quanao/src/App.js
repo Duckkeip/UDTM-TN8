@@ -1,10 +1,12 @@
 
 import './App.css';
-//import { BrowserRouter, Routes, Route ,Navigate,NavLink } from "react-router-dom";
-//import Login from "./pages/Login";
-//import Register from "./pages/Register";
-//import Homepage from './pages/home/homepage';
-import FormSearchPic from './pages/FormSearchPic';
+import { BrowserRouter, Routes, Route   } from "react-router-dom";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import Homepage from './pages/home/homepage';
+import Products from './components/products/products';
+import Category from './components/categories/categories';
+import protectedRoute from './components/protected';
 //import Download from './pages/Download';
 //import Sach from './pages/Sach';
 //import SachTrongLoai from './pages/SachTrongLoai';
@@ -13,12 +15,19 @@ import FormSearchPic from './pages/FormSearchPic';
 function App() {
   
   return (
-    <div className="container mt-4">
-    <h2 className="text-center text-primary mb-3">
-      🔍 Form Tìm Hình Ảnh (Unsplash)
-    </h2>
-    <FormSearchPic />
-  </div>
+    <BrowserRouter>
+
+      <Routes>{/* User */}
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/home/:id" element={<Homepage />} />
+        {/*<Route path="*" element={<Navigate to="/login" replace />} />*/}
+
+        <Route path="/home/:id/sanpham" element={<protectedRoute><Products/></protectedRoute>} />
+        <Route path="/home/:id/danhmuc" element={<protectedRoute><Category/></protectedRoute>} />
+      </Routes>
+     
+    </BrowserRouter>
 );
 
 

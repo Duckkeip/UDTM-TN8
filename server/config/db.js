@@ -1,14 +1,15 @@
 // server/config/db.js
-const mongoose = require('mongoose');
+const { MongoClient } = require('mongodb');
+const uri = "mongodb://127.0.0.1:27017";
+const client = new MongoClient(uri);
 
-const connectDB = async () => {
-  try {
-    await mongoose.connect("mongodb://127.0.0.1:27017/quanao");
-    console.log('✅ kết nối MongoDB thành công');
-  } catch (err) {
-    console.error('❌ Lỗi kết nối MongoDB:', err.message);
-    process.exit(1);
-  }
+
+async function connectDB () {
+ 
+    await client.connect(uri);
+    console.log('✅ kết nối MongoDB thành công với database "quanao"');
+    return client.db('quanao');
+  
 };
 
 module.exports = connectDB;
