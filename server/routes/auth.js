@@ -35,7 +35,7 @@ router.post("/register", async (req, res) => {
       address,
     });
 
-    await users.save();
+    await users.insertOne(newUser);
 
     res.json({ message: "Đăng ký thành công!" });
   } catch (err) {
